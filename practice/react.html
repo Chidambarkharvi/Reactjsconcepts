@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+<div> </div>
+<div id="container">
+
+</div>
+<div id="container1"> </div>
+
+    <script crossorigin src="https://unpkg.com/react@17/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+    <script>
+
+const reactElement =  React.createElement("h1",null,"welcome to react")
+
+const reactElement1 =  React.createElement("h1",{id:"demo",className:"test"},"welcome to react")
+
+
+//multiple elements rendering , store in one div and render div
+
+const divElement = React.createElement("div",{style:{color:"red"}},reactElement,reactElement1)
+
+ReactDOM.render(divElement,document.getElementById("container1"))
+
+
+//
+
+const hobbies = ["swim","sing","dance"]
+const hobbylist = React.createElement("ul",null,hobbies.map((hobby,index)=>{
+    return React.createElement("li",{key:"id"},hobby)
+
+}))
+ReactDOM.render(hobbylist,document.getElementById("container"))
+
+
+    </script>
+
+</body>
+</html>
